@@ -15,7 +15,7 @@ const SearchList = ({ username, reposUrl }: SearchListProps) => {
   const theme = useTheme();
   const { data: repos, error } = useSWR(reposUrl);
 
-  const handleClickUser = () => {
+  const handleClickAccordionSummary = () => {
     mutate(reposUrl, fetcher(reposUrl));
   };
 
@@ -40,7 +40,7 @@ const SearchList = ({ username, reposUrl }: SearchListProps) => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
           id="panel1-header"
-          onClick={handleClickUser}
+          onClick={handleClickAccordionSummary}
         >
           <Typography variant={'h6'} fontWeight={600}>
             {username}
