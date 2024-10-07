@@ -28,7 +28,7 @@ const SearchList = ({ username, reposUrl }: SearchListProps) => {
   }
 
   return (
-    <Box>
+    <Box data-testid={'cy_select-list'}>
       <Accordion
         disableGutters={true}
         sx={{

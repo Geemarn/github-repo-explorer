@@ -3,7 +3,7 @@ import { Container, Typography, Stack } from '@mui/material';
 import SearchList from '../components/SearchList';
 import useSWR from 'swr';
 import { FormEvent, useState } from 'react';
-import Index from '../components/Loading';
+import Loading from '../components/Loading';
 import { fetcher } from '../utils.ts';
 
 type UserData = {
@@ -37,7 +37,7 @@ const App = () => {
           </Typography>
         )}
         {isLoading ? (
-          <Index />
+          <Loading />
         ) : (
           data?.items?.map(({ id, login, repos_url }: UserData) => (
             <SearchList key={id} username={login} reposUrl={repos_url} />

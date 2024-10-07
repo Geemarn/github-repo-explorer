@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "login": "test user 1",
+      "repos_url": "https://api.github.com/users/testuser1/repos"
+    },
+    {
+      "id": "2",
+      "login": "test user 2",
+      "repos_url": "https://api.github.com/users/testuser2/repos"
+    }
+  ]
+}
