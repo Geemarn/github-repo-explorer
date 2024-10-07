@@ -1,50 +1,90 @@
-# React + TypeScript + Vite
+# Github Repo Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
 
-Currently, two official plugins are available:
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+- [Running the App](#running-the-app)
+- [Testing the Code](#testing-the-code)
+- [Linting](#linting)
+- [Deployment](#deployment)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+This is a github repository explorer. It is **React.js (App Router architecture)** project
+using [Vitest](https://vitest.dev/).
+Pls read the [React.js](https://react.dev/) documentation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js version 20 or higher
+- Package manager - Yarn
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+| Main Tools | Usage             | Version  |
+  |------------|-------------------|----------|
+| Typescript | Language          | ^5       |
+| React      | Project Framework | ^18.3.1  |
+| MUI        | UI Library        | ^6.1.2   |
+| SWR        | data fetcher      | ^2.2.5   |
+| Vitest     | Testing ENV       | ^2.1.2   |
+| Storybook  | visual testing    | ^8.3.5   |
+| Cypress    | e2e testing       | ^13.15.0 |
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Geemarn/github-repo-explorer.git
+   ```
+   ```bash
+   cd Github repositories explorer
+   ```
+2. Install dependencies:
+   ```bash
+   yarn install
+   ```
+
+### Running the App
+
+#### Locally
+
+To start the development server in staging mode, run the following command:
+
+```bash
+yarn dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+This will serve the app at `http://localhost:3000`
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Testing the Code
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+To run the test suite:
+
+#### Unit test
+
+```bash
+yarn test
 ```
+
+#### Storybook
+
+```bash
+yarn storybook
+```
+
+#### Cypress
+
+```bash
+yarn cypress:run
+```
+
+### Linting
+
+```bash
+yarn lint
+```
+
+### Deployment
+
+deployment is carried using [Vercel](https://vercel.com/)

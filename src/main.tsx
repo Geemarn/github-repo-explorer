@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createTheme, ThemeProvider } from '@mui/material';
-import Index from './app';
+import App from './app';
 import './index.css';
 
 export const theme = createTheme({
@@ -15,7 +15,7 @@ export const theme = createTheme({
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
-      <Index />
+      <App />
     </ThemeProvider>
   </StrictMode>,
 );
