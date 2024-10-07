@@ -4,14 +4,10 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import Index from './app';
 import './index.css';
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     primary: {
       main: '#2b9cdb',
-    },
-    secondary: {
-      main: '#f2f2f2',
-      dark: '#e0e0e0',
     },
   },
 });

@@ -1,8 +1,14 @@
 import { Stack, Typography, useTheme } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
-import { RepoContainerProps } from './SearchList.tsx';
 
-const RepoContainer = ({ name, description, stargazers_count }: RepoContainerProps) => {
+export type RepoProps = {
+  id?: string;
+  name: string;
+  description: string;
+  stargazers_count: string;
+};
+
+const Repo = ({ name, description, stargazers_count }: RepoProps) => {
   const theme = useTheme();
 
   return (
@@ -12,7 +18,7 @@ const RepoContainer = ({ name, description, stargazers_count }: RepoContainerPro
       justifyContent="space-between"
       marginLeft={'auto'}
       sx={{
-        backgroundColor: theme.palette.secondary.dark,
+        background: theme.palette.grey[300],
         padding: 2,
         marginBottom: theme.spacing(2),
       }}
@@ -33,4 +39,4 @@ const RepoContainer = ({ name, description, stargazers_count }: RepoContainerPro
   );
 };
 
-export default RepoContainer;
+export default Repo;

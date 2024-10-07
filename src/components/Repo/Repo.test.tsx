@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { RepoContainerProps } from '../SearchList.tsx';
+import { RepoProps } from './';
 import { render, screen } from '@testing-library/react';
-import RepoContainer from '../RepoContainer.tsx';
+import RepoContainer from './index.tsx';
 
-describe('RepoContainer', () => {
-  const mockRepo: RepoContainerProps = {
+describe('Repo', () => {
+  const mockRepo: RepoProps = {
     name: 'Test Repo',
     description: 'This is a test repository',
     stargazers_count: '150',

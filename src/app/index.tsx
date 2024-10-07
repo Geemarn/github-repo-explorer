@@ -1,9 +1,9 @@
-import SearchForm from '../components/SearchForm.tsx';
+import SearchForm from '../components/SearchForm';
 import { Container, Typography, Stack } from '@mui/material';
-import SearchList from '../components/SearchList.tsx';
+import SearchList from '../components/SearchList';
 import useSWR from 'swr';
 import { FormEvent, useState } from 'react';
-import Loading from '../components/Loading.tsx';
+import Index from '../components/Loading';
 import { fetcher } from '../utils.ts';
 
 type UserData = {
@@ -14,7 +14,7 @@ type UserData = {
 
 const USERS_GITHUB_URL = 'https://api.github.com/search/users?per_page=5&page=1';
 
-function Index() {
+const App = () => {
   const [inputValue, setInputValue] = useState('');
   const [inputSubmitValue, setInputSubmitValue] = useState('');
 
@@ -37,7 +37,7 @@ function Index() {
           </Typography>
         )}
         {isLoading ? (
-          <Loading />
+          <Index />
         ) : (
           data?.items?.map(({ id, login, repos_url }: UserData) => (
             <SearchList key={id} username={login} reposUrl={repos_url} />
@@ -46,6 +46,6 @@ function Index() {
       </Stack>
     </Container>
   );
-}
+};
 
-export default Index;
+export default App;

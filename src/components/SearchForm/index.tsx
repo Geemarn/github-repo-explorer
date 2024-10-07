@@ -16,7 +16,7 @@ const SearchForm = ({ setInputValue, handleSubmitForm, errormessage }: SearchInp
         <TextField
           id="outlined-basic"
           variant={'outlined'}
-          sx={{ backgroundColor: theme.palette.secondary.main, borderColor: 'none' }}
+          sx={{ backgroundColor: theme.palette.grey[100] }}
           onChange={(e) => setInputValue(e.target.value)}
           label="Enter Username"
         />

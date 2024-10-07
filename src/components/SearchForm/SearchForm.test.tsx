@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import SearchForm from '../SearchForm.tsx';
+import SearchForm from './index.tsx';
 import { ERR_MESSAGE } from '../../utils.ts';
 import { userEvent } from '@testing-library/user-event';
 

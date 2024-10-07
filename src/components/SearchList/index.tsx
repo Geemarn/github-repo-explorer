@@ -1,17 +1,10 @@
-import { Accordion, AccordionSummary, useTheme, styled, Box, Typography } from '@mui/material';
+import { Accordion, AccordionSummary, useTheme, Box, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import RepoContainer from './RepoContainer.tsx';
+import Repo, { RepoProps } from '../Repo';
 import useSWR, { mutate } from 'swr';
-import { fetcher } from '../utils.ts';
-import Loading from './Loading.tsx';
-
-export type RepoContainerProps = {
-  id?: string;
-  name: string;
-  description: string;
-  stargazers_count: string;
-};
+import { fetcher } from '../../utils.ts';
+import Index from '../Loading';
+import { AccordionDetails } from './SearchList.style.ts';
 
 type SearchListProps = {
   username: string;
@@ -39,7 +32,7 @@ const SearchList = ({ username, reposUrl }: SearchListProps) => {
       <Accordion
         disableGutters={true}
         sx={{
-          backgroundColor: theme.palette.secondary.main,
+          backgroundColor: theme.palette.grey[100],
           boxShadow: 'none',
         }}
       >
@@ -55,14 +48,14 @@ const SearchList = ({ username, reposUrl }: SearchListProps) => {
         </AccordionSummary>
         <AccordionDetails>
           {!repos ? (
-            <Loading />
+            <Index />
           ) : !repos?.length ? (
             <Typography variant="body1" textAlign={'center'}>
               No Repository for this user
             </Typography>
           ) : (
-            repos?.map(({ id, name, description, stargazers_count }: RepoContainerProps) => (
-              <RepoContainer key={id} name={name} description={description} stargazers_count={stargazers_count} />
+            repos?.map(({ id, name, description, stargazers_count }: RepoProps) => (
+              <Repo key={id} name={name} description={description} stargazers_count={stargazers_count} />
             ))
           )}
         </AccordionDetails>
@@ -72,12 +65,3 @@ const SearchList = ({ username, reposUrl }: SearchListProps) => {
 };
 
 export default SearchList;
-
-const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-  backgroundColor: theme.palette.background.paper,
-  paddingRight: 0,
-  paddingBottom: 0,
-  paddingTop: theme.spacing(2),
-  maxHeight: 500,
-  overflowY: 'auto',
-}));

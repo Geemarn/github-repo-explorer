@@ -1,9 +1,10 @@
 import { describe, vi, it, expect } from 'vitest';
 import useSWR, { mutate } from 'swr';
 import { render, screen, waitFor } from '@testing-library/react';
-import SearchList, { RepoContainerProps } from '../SearchList.tsx';
+import SearchList from './index.tsx';
 import { userEvent } from '@testing-library/user-event';
-import { fetcher } from '../../utils';
+import { fetcher } from '../../utils.ts';
+import { RepoProps } from '../Repo';
 
 vi.mock('swr', () => ({
   default: vi.fn(),
@@ -28,7 +29,7 @@ describe('SearchList', () => {
     },
   ];
 
-  const renderSearchList = (data: null | RepoContainerProps[] = null, error: null | Error = null) => {
+  const renderSearchList = (data: null | RepoProps[] = null, error: null | Error = null) => {
     (useSWR as any).mockReturnValue({ data, error });
     render(<SearchList username={mockUsername} reposUrl={mockReposUrl} />);
   };
