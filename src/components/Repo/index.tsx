@@ -29,11 +29,11 @@ const Repo = ({ name, description, stargazers_count }: RepoProps) => {
         </Typography>
         <Typography variant="h6">{description}</Typography>
       </Stack>
-      <Stack gap={0.2} direction="row" justifyContent="space-between" alignItems="start">
+      <Stack gap={0.2} direction="row" justifyContent="space-between" alignItems="center">
         <Typography variant="h5" fontWeight={600}>
           {stargazers_count}
         </Typography>
-        <StarIcon data-testid={'star-icon'} sx={{ marginTop: 0.3 }} />
+        <StarIcon data-testid={'star-icon'} />
       </Stack>
     </Stack>
   );

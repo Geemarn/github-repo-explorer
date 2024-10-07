@@ -1,5 +1,7 @@
 # Github Repo Explorer
 
+https://github-repo-explorer-htz2vg9kb-geemarns-projects.vercel.app/
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
@@ -88,3 +90,5 @@ yarn lint
 ### Deployment
 
 deployment is carried using [Vercel](https://vercel.com/)
+
+- visit [App](https://github-repo-explorer-htz2vg9kb-geemarns-projects.vercel.app/) to view in prodction
