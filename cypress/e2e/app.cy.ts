@@ -1,6 +1,6 @@
 describe('App', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:5173/');
+    cy.visit('https://github-repo-explorer-htz2vg9kb-geemarns-projects.vercel.app/');
   });
   const GITHUB_URL = 'https://api.github.com/search/users?per_page=5&page=1';
   it('should render the search form', () => {
