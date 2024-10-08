@@ -1,10 +1,10 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import SearchForm from './index.tsx';
-import { ERR_MESSAGE } from '../../utils.ts';
 import { userEvent } from '@testing-library/user-event';
 
 describe('SearchForm', () => {
+  const ERR_MESSAGE = 'An error occurred';
   const renderSearchForm = (errormessage?: string) => {
     const mockSetInputValue = vi.fn();
     const mockHandleSubmitForm = vi.fn((e) => e.preventDefault());

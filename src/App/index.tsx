@@ -6,13 +6,13 @@ import { FormEvent, useState } from 'react';
 import Loading from '../components/Loading';
 import { fetcher } from '../utils.ts';
 
+const USERS_GITHUB_URL = 'https://api.github.com/search/users?per_page=5&page=1';
+
 type UserData = {
   id: string;
   login: string;
   repos_url: string;
 };
-
-const USERS_GITHUB_URL = 'https://api.github.com/search/users?per_page=5&page=1';
 
 const App = () => {
   const [inputValue, setInputValue] = useState('');
