@@ -1,10 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createTheme, ThemeProvider } from '@mui/material';
-import App from './app';
+import App from './App';
 import './index.css';
 
-export const theme = createTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: '#2b9cdb',

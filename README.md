@@ -14,9 +14,13 @@ https://github-repo-explorer-htz2vg9kb-geemarns-projects.vercel.app/
 
 ## Getting Started
 
-This is a github repository explorer. It is **React.js (App Router architecture)** project
-using [Vitest](https://vitest.dev/).
-Pls read the [React.js](https://react.dev/) documentation
+This is a [React.js](https://react.dev/) application built using [Vite](https://vite.dev/).
+
+- It uses a folder structure similar to next.js app router architecture.
+- Data fetch and caching is done sing swr
+- MUI is used as the UI library
+- Testing is carried out using testing-library/react (vitest), cypress, storybook
+- Linting and code formatting is done using eslint and prettier
 
 ### Prerequisites
 
@@ -51,17 +55,17 @@ Pls read the [React.js](https://react.dev/) documentation
 
 #### Locally
 
-To start the development server in staging mode, run the following command:
+To start the development server, run the following command:
 
 ```bash
 yarn dev
 ```
 
-This will serve the app at `http://localhost:3000`
+This will serve the app at [http://localhost:3000](`http://localhost:3000)
 
 ### Testing the Code
 
-To run the test suite:
+To run the test suites:
 
 #### Unit test
 

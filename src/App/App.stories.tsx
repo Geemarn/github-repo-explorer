@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import App from './';
+import App from './index';
 import { SWRConfig } from 'swr';
 
 const meta = {
-  title: 'app',
+  title: 'App',
   tags: ['autodocs'],
   component: App,
   decorators: [
