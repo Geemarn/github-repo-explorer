@@ -16,7 +16,6 @@ https://github-repo-explorer-htz2vg9kb-geemarns-projects.vercel.app/
 
 This is a [React.js](https://react.dev/) application built using [Vite](https://vite.dev/).
 
-- It uses a folder structure similar to next.js app router architecture.
 - Data fetch and caching is done sing swr
 - MUI is used as the UI library
 - Testing is carried out using testing-library/react (vitest), cypress, storybook
